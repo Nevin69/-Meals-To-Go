@@ -7,6 +7,14 @@ const Title = styled.Text`
   color: red;
 `;
 
+const RestaurantCard = styled(Card)`
+  padding: 5px;
+`
+
+const RestaurantCardCover = styled(Card.Cover)`
+  padding: 20px;
+  background-color: white;
+`
 
 export const RestaurantInfoCard = ({ restaurant = {}}) => {
   const {
@@ -22,9 +30,9 @@ export const RestaurantInfoCard = ({ restaurant = {}}) => {
   } = restaurant
 
   return(
-    <Card >
-      <Card.Cover style={{padding: 20}} source={{ uri: photos[0] }} />
-      <Title style={{paddingVertical: 10, paddingHorizontal: 20}}>{name}</Title>
-    </Card>
+    <RestaurantCard elevation={5} >
+      <RestaurantCardCover style={{padding: 20}} source={{ uri: photos[0] }} />
+      <Title>{name}</Title>
+    </RestaurantCard>
   )
 }
